@@ -6,7 +6,7 @@ public class GreeterTest {
 
     @Test
     public void testThatGreeterReturnsTheCorrectGreeting() {
-        assertThat(new Greeter().getGreeting()).isEqualTo("Hello, World!");
+        assertThat(new Greeter().getGreeting()).isEqualTo("Goodbye, Mars!");
     }
 
 }
