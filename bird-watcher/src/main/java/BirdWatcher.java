@@ -32,12 +32,24 @@ class BirdWatcher {
         }
         return false;
     }
-
+    /* tASK 4  */
     public int getCountForFirstDays(int numberOfDays) {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.getCountForFirstDays() method");
+        if (numberOfDays > birdsPerDay.length) {
+            numberOfDays = birdsPerDay.length;
+        }
+        int count = 0;
+        for (int i = 0; i < numberOfDays; i++) {
+            count += birdsPerDay[i];
+        }
+        return count;
     }
-
     public int getBusyDays() {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.getBusyDays() method");
+        int busyDays = 0;
+        for (int count : birdsPerDay) {
+            if (count >= 5) {
+                busyDays++;
+            }
+        }
+        return busyDays;
     }
 }
