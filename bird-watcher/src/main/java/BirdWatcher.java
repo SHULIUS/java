@@ -7,19 +7,30 @@ class BirdWatcher {
     }
 
     public int[] getLastWeek() {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.getLastWeek() method");
+       return birdsPerDay.clone();
     }
 
     public int getToday() {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.getToday() method");
+        if (birdsPerDay.length == 0) {
+            return 0;
+        }
+        return birdsPerDay[birdsPerDay.length - 1];
     }
 
     public void incrementTodaysCount() {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.incrementTodaysCount() method");
+        if (birdsPerDay.length == 0) {
+            return;
+        }
+        birdsPerDay[birdsPerDay.length - 1]++;
     }
 
     public boolean hasDayWithoutBirds() {
-        throw new UnsupportedOperationException("Please implement the BirdWatcher.hasDayWithoutBirds() method");
+        for (int count : birdsPerDay) {
+            if (count == 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getCountForFirstDays(int numberOfDays) {
